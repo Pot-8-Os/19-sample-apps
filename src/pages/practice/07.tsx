@@ -1,15 +1,8 @@
-import { NextPage } from 'next';
-import { ChangeEvent, useState } from 'react';
+import { useCelsiusToFahrenheit } from "@/hooks/useCelsiusToFahrenheit";
+import { NextPage } from "next";
 
 const Page: NextPage = () => {
-  const [celsius, setCelsius] = useState(0);
-  const handleChange =  (e: ChangeEvent<HTMLInputElement>) => {
-    setCelsius(Number(e.target.value));
-  };
-
-  const convertFromCelsiusToFahrenheit = (celsius: number) => {
-    return (celsius * 9) / 5 + 32;
-  }; 
+  const { celsius, convertFromCelsiusToFahrenheit, handleChange} = useCelsiusToFahrenheit();
 
 
   return (
